@@ -1,0 +1,45 @@
+"""
+URL configuration for core project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from missingperson.views import*
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns 
+urlpatterns = [
+    path('',home,name='home'),
+    path('detect/',detect,name='detect'),
+    path('surveillance/',surveillance,name = 'surveillance'),
+    path('register/',register,name='register'),
+    path('missing/',missing,name='missing'),
+    path('delete/<int:person_id>/',delete_person, name='delete_person'),
+    path('update/<int:person_id>/',update_person, name='update_person'),
+    path('admin/', admin.site.urls),
+    path('login/', login_view, name='login'),
+    path('criminals/delete/<int:pk>/', delete_criminal, name='delete_criminal'),
+    path('police/', police_dashboard, name='police_dashboard'),
+    path('criminals/update/<int:pk>/', update_criminal, name='update_criminal'),
+    path('criminalsregister/',criminalsregister,name='criminalsregister'),
+    path('video_feed/', video_feed, name='video_feed'),
+    path('location/', location, name='location'),
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+

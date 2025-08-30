@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.so
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# If you collect static into STATIC_ROOT, ignore it too
+/static/
+
+# Environment files
+.env
+*.env
+
+# VSCode settings
+.vscode/
+
+# Byte-compiled / cache
+*.egg-info/
+.eggs/
+*.egg
+*.manifest
+*.spec
+
+# PyInstaller
+dist/
+build/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Coverage / testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+*.seed
+docker-compose.override.yml
+
+#Survileance Model
+core/core/surveillance_model/*.h5
+core/public/static/missing_persons
+core/public/static/criminals
