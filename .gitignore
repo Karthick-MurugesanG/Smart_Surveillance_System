@@ -49,7 +49,7 @@ htmlcov/
 .pytest_cache/
 nosetests.xml
 coverage.xml
-
+  
 # Jupyter
 .ipynb_checkpoints
 
